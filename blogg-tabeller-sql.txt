@@ -1,0 +1,77 @@
+mysql> show databases;
++--------------------+
+| Database           |
++--------------------+
+| information_schema |
+| blogg              |
+| mysql              |
+| performance_schema |
+| test               |
++--------------------+
+5 rows in set (0.00 sec)
+
+mysql> use blogg
+Database changed
+
+mysql> show tables;
++-----------------+
+| Tables_in_blogg |
++-----------------+
+| anvandare       |
+| artiklar        |
+| kommentarer     |
++-----------------+
+3 rows in set (0.00 sec)
+
+mysql> describe anvandare;
++--------------+--------------+------+-----+---------+-------+
+| Field        | Type         | Null | Key | Default | Extra |
++--------------+--------------+------+-----+---------+-------+
+| anvandarnamn | varchar(15)  | NO   | PRI | NULL    |       |
+| fnamn        | varchar(100) | NO   |     | NULL    |       |
+| enamn        | varchar(100) | NO   |     | NULL    |       |
+| password     | varchar(40)  | NO   | MUL | NULL    |       |
+| is_admin     | tinyint(4)   | NO   |     | 0       |       |
++--------------+--------------+------+-----+---------+-------+
+5 rows in set (0.00 sec)
+
+mysql> describe artiklar;
++-----------------+---------------+------+-----+---------+----------------+
+| Field           | Type          | Null | Key | Default | Extra          |
++-----------------+---------------+------+-----+---------+----------------+
+| artiklarID      | int(11)       | NO   | PRI | NULL    | auto_increment |
+| artiklar_rubrik | varchar(100)  | NO   |     | NULL    |                |
+| artiklar_text   | varchar(4000) | NO   |     | NULL    |                |
+| anvandarnamn    | varchar(15)   | NO   | MUL | NULL    |                |
+| artiklar_pubtid | datetime      | NO   | MUL | NULL    |                |
++-----------------+---------------+------+-----+---------+----------------+
+5 rows in set (0.00 sec)
+
+mysql> describe kommentarer;
++--------------------+---------------+------+-----+---------+----------------+
+| Field              | Type          | Null | Key | Default | Extra          |
++--------------------+---------------+------+-----+---------+----------------+
+| kommentarerID      | int(11)       | NO   | PRI | NULL    | auto_increment |
+| artiklarID         | int(11)       | YES  | MUL | NULL    |                |
+| kommentarer_rubrik | varchar(100)  | NO   |     | NULL    |                |
+| kommentarer_text   | varchar(1000) | NO   |     | NULL    |                |
+| mejl               | varchar(200)  | NO   |     | NULL    |                |
+| kommemtarer_namn   | varchar(100)  | YES  |     | NULL    |                |
+| kommentarer_url    | varchar(150)  | YES  |     | NULL    |                |
+| kommentarer_tid    | datetime      | NO   |     | NULL    |                |
++--------------------+---------------+------+-----+---------+----------------+
+8 rows in set (0.00 sec)
+
+mysql> SELECT * FROM anvandare;
++--------------+-------+----------+------------------------------------------+----------+
+| anvandarnamn | fnamn | enamn    | password                                 | is_admin |
++--------------+-------+----------+------------------------------------------+----------+
+| pelle        | Per   | Svensson | 063b89b8b4687aa23c554f14779a8e6e09107186 |        1 |
+| stina        | Stina | Persson  | 063b89b8b4687aa23c554f14779a8e6e09107186 |        0 |
++--------------+-------+----------+------------------------------------------+----------+
+2 rows in set (0.00 sec)
+
+mysql> SELECT * FROM artiklar;
+mysql> SELECT * FROM kommemtarer;
+
+
