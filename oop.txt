@@ -1,0 +1,36 @@
+OBJEKT
+
+Klassisk OO: Java, C++, PHP - objekt är instanser av klasser
+Klasser kan (i princip) inte ändras "run time" - de är immutabla
+
+Funktionell OO med prototyper: JavaScript - Objekt är instanser som ärver från en prototyp
+Prototyper kan ändras "run time" - de är mutabla
+
+Objekt tillåter INKAPSLING av data = mer modulär applikation
+
+Objekt tillåter ÅTERANVÄNDNING = mindre upprepning, mer "lån" av andra
+
+Objekt kan alltså vara färdiga = Jag slipper definiera klasserna/prototyperna
+
+Färdiga objekt i JavaScript kommer från "värden" (The Host Object = Webbläsaren) = The DOM
+Färdiga objekt kan också komma från bibliotek (JQuery, YUI, Modernizr)
+
+Färdiga objekt i Java kommer från körmiljön och från bibliotek som importeras
+
+Färdiga objekt i PHP finns i inbyggda bibliotek (ex. PDO) och moduler
+Dessa inkluderas i php.ini (konfigurationsfilen för PHP)
+Det finns också bibliotek (PEAR, Zend, EZ Components, etc)
+
+Objekt kan ha egenskaper (properties)
+Objekt kan ha metoder (funktioner)
+
+Dessa kan vara public, private, protected - det styr åtkomst
+
+I Java och JavaScript är objektoperatorn en punkt: document.getElementsByTagName()
+I PHP är objektoperatorn "bindestreck + större än": $dbh->query() 
+
+Objekt skapas antingen med:
+Operatorn "new"
+En funktion som returnerar ett objekt: $stmt = $dbh->prepare();
+
+
